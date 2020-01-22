@@ -1,0 +1,73 @@
+@import "../settings.scss";
+
+.zq__card {
+	color: #fff;
+	margin: $card-margin $card-margin $card-margin 0;
+	height: 130px;
+	width: 100%;
+	display: inline-block;
+}
+
+// Cada breakpoint está definido por el ancho de las 
+// cajas y sus márgenes. 
+@for $i from 2 through 3 {
+	@media (min-width: $i * ($card-width + $card-margin)) and (max-width: ($i + 1) * ($card-width + $card-margin) - 1) {
+		.zq__card:nth-child(#{$i} + n) {
+			margin-right: 0;
+		}
+	}
+}
+
+@media (min-width: 4 * ($card-width + $card-margin)) {
+	.zq__card:nth-child(4n) {
+		margin-right: 0;
+	}
+}
+
+.zq__card__header--off,
+.zq__card__header {
+	height: 93px;
+	padding: 20px 18px 10px 18px;
+	font-size: 24px;
+	background-color: #2d4f83;
+	font-weight: 700;
+}
+
+.zq__card__header--off {
+	color: #8b8b8b;
+	background-color: #e2e2e2;
+}
+
+.zq__card__footer--off,
+.zq__card__footer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 37px;
+	background-color: #00b886;
+}
+
+.zq__card__footer--off {
+	background-color: #8b8b8b;
+}
+
+.zq__card__footer__waiting,
+.zq__card__footer__elapsed {
+	font-weight: 800;
+	display: flex;
+	flex-direction: row;
+	margin-left: 16px;
+}
+
+.zq__card__footer__waiting > span,
+.zq__card__footer__elapsed > span {
+	line-height:16px;
+	margin-left:6px;
+}
+
+.zq__card__footer__waiting > svg,
+.zq__card__footer__elapsed > svg {
+	height: 16px;
+}
+
+

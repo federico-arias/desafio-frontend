@@ -1,0 +1,57 @@
+@import "../settings.scss";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Raleway", "Open Sans", sans-serif;
+}
+
+html {
+	background-color: #1c2f57;
+}
+
+.zq__header {
+	background-color: #1c2f57;
+	height: 83px;
+	text-align: center;
+	position: relative;
+}
+
+.zq__header__logo {
+	height: 36px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	margin: -18px 0 0 -68px;
+}
+
+.zq__wrapper {
+	display: block;
+	width: auto;
+	margin: 0 auto;
+	padding: 0 $card-margin;
+}
+
+.zq__wrapper p {
+	margin-top:16px;
+	font-size: 18px;
+	color: #fff;
+}
+
+@for $i from 2 through 4 {
+	@media (min-width: $i * ($card-width + $card-margin)) {
+		.zq__search-bar__input,
+		.zq__wrapper {
+			max-width: $i * ($card-width + $card-margin);
+			padding-left: 0;
+			padding-right:0;
+		}
+
+		.zq__card {
+			width: $card-width;
+		}
+
+	}
+}
